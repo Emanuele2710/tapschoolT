@@ -1,0 +1,75 @@
+UTENTI:                                             
+-ID
+-username
+-password
+-tipo
+
+CREATE TABLE `tapschool`.`Utenti` ( 
+`ID` INT NOT NULL , 
+`username` VARCHAR(35) NOT NULL , 
+`password` VARCHAR(35) NOT NULL , 
+`tipo` VARCHAR(35) NOT NULL , 
+)
+
+_____________________________________________________
+CLASSI:
+-ID
+-CLASSE
+-SEZIONE
+-INDIRIZZO
+
+CREATE TABLE `tapschool`.`Classi` ( 
+`ID` INT NOT NULL , 
+`Sezione` INT(1) NOT NULL , 
+`Indirizzo` VARCHAR(35) NOT NULL , 
+`Classe` INT(1) NOT NULL , 
+)
+_____________________________________________________
+TENGONO:
+-ID_Professore,ID_Classe
+
+INSEGNANO:
+-ID_Materia,ID_professore
+
+
+
+_____________________________________________________
+MATERIE:
+-ID
+-Nome
+
+CREATE TABLE `tapschool`.`Materia` ( 
+`ID` INT NOT NULL , 
+`Nome` VARCHAR(35) NOT NULL , 
+)
+_____________________________________________________
+PROFESSORI:
+-ID
+-Tipo
+-nome
+-cognome
+CREATE TABLE `tapschool`.`Professori` ( 
+`ID` INT NOT NULL , 
+`tipo` VARCHAR(35) NOT NULL , 
+`nome` VARCHAR(35) NOT NULL , 
+`cognome` INT(1) NOT NULL , 
+)
+
+_____________________________________________________
+STUDENTI:
+-ID
+-nome
+-cognome
+-classe
+-codice_fiscale
+
+
+CREATE TABLE `tapschool`.`Studente` ( 
+`ID_Studente` INT NOT NULL , 
+`Nome_Studente` VARCHAR(35) NOT NULL , 
+`Cognome_Studente` VARCHAR(35) NOT NULL , 
+`Classe_Studente` INT(1) NOT NULL , 
+`CodiceFiscale_Studente` CHAR(16) NOT NULL 
+)
+
+
