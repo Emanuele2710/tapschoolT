@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.leo.tapschool_gestioneimpegniscolastici.TipoUtente"
+    android:background="@drawable/Sfondo_Activity"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="135dp"
+        android:layout_height="26dp"
+        android:fontFamily="sans-serif"
+        android:text="Sono un professore"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="290dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="135dp"
+        android:layout_height="26dp"
+        android:fontFamily="sans-serif"
+        android:text="Sono uno studente"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="290dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="394dp"
+        android:layout_height="35dp"
+        android:fontFamily="sans-serif"
+        android:text="Sei uno studente o un professore?"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="34dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="172dp"
+        android:layout_height="153dp"
+        app:srcCompat="@drawable/Studente"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="123dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="155dp"
+        android:layout_height="153dp"
+        app:srcCompat="@drawable/Professore"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="123dp" />
+
+</android.support.constraint.ConstraintLayout>

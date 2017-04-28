@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<client> <!-- l'utente ha effettuato il login -->
+	<inserisciEvento> <!-- creazione di un nuovo evento, inserimento di tutti i dati dell'evento -->
+		<data> 26/04/2017 </data>
+		<ora> 08.00 </ora>
+		<note> Gita a Verona </note>
+	</inserisciEvento>
+</client>

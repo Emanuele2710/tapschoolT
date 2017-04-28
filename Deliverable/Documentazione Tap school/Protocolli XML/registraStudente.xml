@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<client> 
+	<registraStudente> <!-- inserimento di un nuovo studente all'interno del database -->
+		<nome> Pippo </nome>
+		<cognome> Pluto </cognome>
+		<username> pippo_pluto </username>
+		<password> password </password>
+		<classe> 5CI </classe>
+	</registraStudente>
+</client>

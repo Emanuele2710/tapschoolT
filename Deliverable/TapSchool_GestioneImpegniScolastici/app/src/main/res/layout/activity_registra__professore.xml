@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.leo.tapschool_gestioneimpegniscolastici.Registra_Professore"
+    android:background="@drawable/Sfondo_Activity"
+    >
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="264dp"
+        android:layout_height="37dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="REGISTRATI"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="433dp" />
+
+    <EditText
+        android:id="@+id/editText6"
+        style="@android:style/Widget.EditText"
+        android:layout_width="263dp"
+        android:layout_height="41dp"
+        android:backgroundTint="@android:color/background_light"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Password"
+        android:textColor="@android:color/background_light"
+        android:textColorHighlight="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="334dp"
+        tools:textColorHint="@android:color/background_light" />
+
+    <EditText
+        android:id="@+id/editText7"
+        style="@android:style/Widget.EditText"
+        android:layout_width="263dp"
+        android:layout_height="39dp"
+        android:backgroundTint="@android:color/background_light"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Username"
+        android:textColor="@android:color/background_light"
+        android:textColorHighlight="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="295dp"
+        tools:textColorHint="@android:color/background_light" />
+
+    <EditText
+        android:id="@+id/editText8"
+        style="@android:style/Widget.EditText"
+        android:layout_width="263dp"
+        android:layout_height="39dp"
+        android:backgroundTint="@android:color/background_light"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Cognome"
+        android:textColor="@android:color/background_light"
+        android:textColorHighlight="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="258dp"
+        tools:textColorHint="@android:color/background_light" />
+
+    <EditText
+        android:id="@+id/editText9"
+        style="@android:style/Widget.EditText"
+        android:layout_width="263dp"
+        android:layout_height="39dp"
+        android:backgroundTint="@android:color/background_light"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Nome"
+        android:textColor="@android:color/background_light"
+        android:textColorHighlight="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        tools:layout_editor_absoluteX="61dp"
+        tools:layout_editor_absoluteY="219dp"
+        tools:textColorHint="@android:color/background_light" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="271dp"
+        android:layout_height="159dp"
+        app:srcCompat="@drawable/Logo_White"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrazione Professore"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="190dp" />
+</android.support.constraint.ConstraintLayout>

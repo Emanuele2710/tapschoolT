@@ -1,0 +1,50 @@
+CREATE TABLE IF NOT EXISTS `classi` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `classe` int(1) NOT NULL,
+  `sezione` varchar(1) NOT NULL,
+  `indirizzo` varchar(30) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB
+
+
+CREATE TABLE IF NOT EXISTS `materie` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(30) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB
+
+
+
+
+CREATE TABLE IF NOT EXISTS `eventi` (
+  `ID_Evento` int(11) NOT NULL AUTO_INCREMENT,
+  `data` date NOT NULL,
+  `ora` date NOT NULL,
+  `note` text NOT NULL,
+  PRIMARY KEY (`ID_Evento`)
+) ENGINE=InnoDB
+
+
+CREATE TABLE IF NOT EXISTS `studenti` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(30) NOT NULL,
+  `cognome` varchar(30) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `password` char(32) NOT NULL,
+  `classe` int(10) NOT NULL COMMENT 'chiave esterna della tabella Classi',
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB
+
+
+
+
+CREATE TABLE IF NOT EXISTS `professori` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(30) NOT NULL,
+  `cognome` varchar(30) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `password` char(32) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB

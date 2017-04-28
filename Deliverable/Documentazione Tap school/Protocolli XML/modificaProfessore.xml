@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<client> <!-- il professore ha effettuato il login -->
+	<modificaProfessore> <!-- modifica di tutti gli attributi di un professore -->
+		<nome> Pippo </nome>
+		<cognome> Pluto </cognome>
+		<username> pippo_pluto </username>
+		<password> password </password>
+	</modificaProfessore>
+</client>
