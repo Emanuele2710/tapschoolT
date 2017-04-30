@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?> 
 <client>
 	<login> <!-- login da parte dell'utente fornendo username e password (utente che può essere studente o professore) -->
 		<username> pippo_pluto </username>
 		<password> password </password>
 	</login>
 </client>
+
+
+
+

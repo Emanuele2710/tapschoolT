@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sfondo_activity"
+    tools:context="com.consumer.gestioneorari.ttapschool.RegisterActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="135dp"
+        android:layout_height="26dp"
+        android:fontFamily="sans-serif"
+        android:text="Sono un professore"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="14sp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+
+        tools:layout_constraintLeft_creator="1"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignEnd="@+id/imgProfessore" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="135dp"
+        android:layout_height="26dp"
+        android:fontFamily="sans-serif"
+        android:text="Sono uno studente"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="14sp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="11dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_below="@+id/imgStudente"
+        android:layout_alignEnd="@+id/imgStudente" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="394dp"
+        android:layout_height="35dp"
+        android:fontFamily="sans-serif"
+        android:text="Sei uno studente o un professore?"
+        android:textColor="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        android:textSize="24sp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintLeft_creator="1"
+
+        android:layout_marginTop="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/imgStudente" />
+
+    <ImageView
+        android:id="@+id/imgStudente"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/studente"
+
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+
+        tools:layout_constraintLeft_creator="1"
+
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="102dp" />
+
+    <ImageView
+        android:id="@+id/imgProfessore"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/professore"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+
+        tools:layout_constraintLeft_creator="1"
+
+
+        android:layout_marginEnd="12dp"
+        android:layout_alignTop="@+id/imgStudente"
+        android:layout_alignParentEnd="true" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

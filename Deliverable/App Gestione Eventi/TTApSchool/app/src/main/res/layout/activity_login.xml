@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sfondo_login"
+    tools:context="com.consumer.gestioneorari.ttapschool.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="248dp"
+        android:layout_height="170dp"
+        app:srcCompat="@drawable/logo_white"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="68dp"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        style="@android:style/Widget.DeviceDefault.Light.AutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/etUsername"
+        android:layout_below="@+id/etUsername"
+        android:backgroundTint="@android:color/background_light"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@android:color/background_light"
+        android:textColorHighlight="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <EditText
+        android:id="@+id/etUsername"
+        style="@android:style/Widget.EditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnLogin"
+        android:layout_centerVertical="true"
+        android:backgroundTint="@android:color/background_light"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/background_light"
+        android:textColorHighlight="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/background_light"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="222dp"
+        tools:textColorHint="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/tvRegistrati"
+        android:layout_width="75dp"
+        android:layout_height="17dp"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:text="Registrati!"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="373dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Non sei ancora registrato? "
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteY="373dp"
+        tools:layout_editor_absoluteX="68dp"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/btnLogin"
+        android:layout_alignStart="@+id/btnLogin" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="214dp"
+        android:layout_height="45dp"
+        android:background="@android:color/transparent"
+        android:text="LOGIN"
+        android:textColor="@android:color/background_light"
+        tools:layout_editor_absoluteY="319dp"
+        tools:layout_editor_absoluteX="86dp"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/etPassword"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

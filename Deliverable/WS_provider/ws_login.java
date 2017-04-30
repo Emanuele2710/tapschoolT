@@ -111,7 +111,7 @@ public class ws_login {
      * Web service operation
      */
     @WebMethod(operationName = "RegistraStudente")
-    public boolean RegistraStudente(@WebParam(name = "nome") String nome, @WebParam(name = "cognome") String cognome, @WebParam(name = "username") String username, @WebParam(name = "password") String password, @WebParam(name = "classe") int classe, @WebParam(name = "sezione") char sezione, @WebParam(name = "indirizzo") String indirizzo) {
+    public boolean RegistraStudente(@WebParam(name = "nome") String nome, @WebParam(name = "cognome") String cognome, @WebParam(name = "username") String username, @WebParam(name = "password") String password, @WebParam(name = "classe") int classe, @WebParam(name = "sezione") String sezione, @WebParam(name = "indirizzo") String indirizzo) {
 
         Connection conn = null;
         Statement stmt = null;
@@ -177,7 +177,7 @@ public class ws_login {
     }
 
     @WebMethod(operationName = "RegistraProfessore")
-    public boolean RegistraProfessore(@WebParam(name = "nome") String nome, @WebParam(name = "cognome") String cognome, @WebParam(name = "username") String username, @WebParam(name = "password") String password, @WebParam(name = "classe") ArrayList<Integer> classe, @WebParam(name = "sezione") ArrayList<String> sezione, @WebParam(name = "indirizzo") ArrayList<String> indirizzo , @WebParam(name = "materia") ArrayList<String> materia) {
+    public boolean RegistraProfessore(@WebParam(name = "nome") String nome, @WebParam(name = "cognome") String cognome, @WebParam(name = "username") String username, @WebParam(name = "password") String password, @WebParam(name = "classe") ArrayList<String> classe, @WebParam(name = "sezione") ArrayList<String> sezione, @WebParam(name = "indirizzo") ArrayList<String> indirizzo , @WebParam(name = "materia") ArrayList<String> materia) {
 
         Connection conn = null;
         Statement stmt = null;
@@ -199,7 +199,8 @@ public class ws_login {
             ResultSet rs = stmt.executeQuery(sql);
             int i = 0;
             while (rs.next()) {
-                if (rs.getInt("classe") == classe.get(i) && rs.getString("sezione").equals(sezione.get(i)) && rs.getString("indirizzo").equals(indirizzo.get(i))) {
+               if(i<classe.size())
+                if (Integer.toString(rs.getInt("classe")).equals(classe.get(i)) && rs.getString("sezione").equals(sezione.get(i)) && rs.getString("indirizzo").equals(indirizzo.get(i))) {
                     id_classe.add(rs.getInt("ID"));
                     i++;
                 }
@@ -285,6 +286,57 @@ public class ws_login {
         }
 
         return ritorna;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "GetMaterie")
+    public ArrayList<String> GetMaterie() {
+        
+        Connection conn = null;
+        Statement stmt = null;
+        boolean trovato = false;
+        ArrayList<String> arrayList = new ArrayList<String>();
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+            stmt = conn.createStatement();
+            String sql = "SELECT * FROM materie";
+            ResultSet rs = stmt.executeQuery(sql);
+            int i = 0;
+            while (rs.next()) {
+                arrayList.add(rs.getString("nome"));
+            }
+            stmt.close();
+            conn.close();
+
+        } catch (SQLException se) {
+            arrayList.add(se.toString());
+        } catch (Exception e) {
+            arrayList.add(e.toString());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException se2) {
+                arrayList.add(se2.toString());
+            }
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException se) {
+                se.printStackTrace();
+                arrayList.add(se.toString());
+            }
+        }
+
+        return arrayList;
     }
 
 }
