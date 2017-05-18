@@ -1,9 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.consumer.gestioneorari.ttapschool.MainActivity">
+    tools:context="com.consumer.gestioneorari.ttapschool.MainActivity"
+    android:background="@drawable/sfondo_home"
+    android:id="@+id/mainActivityLayout">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="55dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="196dp"
+            android:layout_height="135dp"
+            android:layout_weight="0.02"
+            android:layout_x="85dp"
+            android:layout_y="48dp"
+            app:srcCompat="@drawable/logo_white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="195dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/etData"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:inputType="none"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textColorLink="@color/colorAccent"
+            android:textIsSelectable="true" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="254dp"
+        android:layout_y="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgLogout"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignBottom="@+id/imgAccount"
+            android:layout_alignParentEnd="true"
+
+            android:layout_x="227dp"
+            android:layout_y="80dp"
+            app:srcCompat="@drawable/logout" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_x="278dp"
+            android:layout_y="96dp"
+            android:text="Logout"
+            android:layout_marginLeft="3dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="48dp"
+        android:layout_y="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgAccount"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+
+            android:layout_x="69dp"
+            android:layout_y="0dp"
+            app:srcCompat="@drawable/utente" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imgAccount"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/imgAccount"
+            android:layout_x="170dp"
+            android:layout_marginLeft="3dp"
+            android:layout_y="64dp"
+            android:text="Account"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/svNote"
+        android:layout_width="248dp"
+        android:layout_height="372dp"
+        android:layout_x="102dp"
+        android:layout_y="262dp">
+
+        <LinearLayout
+            android:id="@+id/llNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="26dp"
+        android:layout_y="310dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imgAddEvento"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="40dp"
+            android:layout_x="19dp"
+            android:layout_y="230dp"
+            app:srcCompat="@drawable/add" />
+
+        <ImageView
+            android:id="@+id/imgModifyEvento"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="40dp"
+            android:layout_x="20dp"
+            android:layout_y="308dp"
+            app:srcCompat="@drawable/edit" />
+
+        <ImageView
+            android:id="@+id/imgDeleteEvento"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_x="20dp"
+            android:layout_y="379dp"
+            app:srcCompat="@drawable/delete" />
+    </LinearLayout>
+
+</AbsoluteLayout>

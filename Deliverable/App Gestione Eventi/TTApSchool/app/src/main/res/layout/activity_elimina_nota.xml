@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.consumer.gestioneorari.ttapschool.EliminaNotaActivity"
+    android:background="@drawable/sfondo_activity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_x="2dp"
+        android:layout_y="169dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="248dp"
+            android:layout_height="170dp"
+            app:srcCompat="@drawable/logo_white" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_x="181dp"
+            android:text="DATA"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spDataElimina"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_x="0dp"
+            android:layout_y="222dp" />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_x="181dp"
+            android:text="ORA"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/spOraElimina"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_x="0dp"
+            android:layout_y="222dp" />
+
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_x="181dp"
+            android:text="NOTA"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <ScrollView
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/svNota">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:id="@+id/llNota">
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnEliminaNota"
+            android:layout_width="222dp"
+            android:layout_height="48dp"
+
+            android:layout_x="96dp"
+            android:layout_y="563dp"
+            android:background="@android:color/holo_red_light"
+            android:text="ELIMINA"
+            android:textColor="@android:color/background_light"
+            android:layout_marginBottom="50dp"/>
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

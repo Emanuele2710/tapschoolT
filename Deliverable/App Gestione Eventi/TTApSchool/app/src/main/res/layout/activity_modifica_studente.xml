@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.consumer.gestioneorari.ttapschool.ModificaStudenteActivity"
+    android:id="@+id/modificaStudenteLayout"
+    android:background="@drawable/sfondo_activity"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="2dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="248dp"
+            android:layout_height="170dp"
+            app:srcCompat="@drawable/logo_white"/>
+            <!--app:srcCompat="@drawable/logo_white"-->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="181dp"
+            android:layout_y="249dp"
+            android:text="MODIFICA"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="42dp"
+        android:layout_y="285dp"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNome"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="15dp"
+            android:layout_x="102dp"
+            android:layout_y="269dp"
+            android:text="NOME"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvCognome"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_x="102dp"
+            android:layout_y="269dp"
+            android:text="COGNOME"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_x="102dp"
+            android:layout_y="269dp"
+            android:text="**********"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="75dp"
+            android:layout_y="407dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvClasse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_x="102dp"
+                android:layout_y="269dp"
+                android:text="1"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvSezione"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:layout_x="102dp"
+                android:layout_y="269dp"
+                android:text="C"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvIndirizzo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="102dp"
+                android:layout_y="269dp"
+                android:text="INFORMATICA"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="545dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="345dp"
+        android:layout_y="285dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgModificaNome"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/edit"
+            android:layout_x="310dp"
+            android:layout_y="272dp"
+            />
+
+        <ImageView
+            android:id="@+id/imgModificaCognome"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_x="315dp"
+            android:layout_y="272dp"
+            app:srcCompat="@drawable/edit"/>
+
+        <ImageView
+            android:id="@+id/imgModificaPassword"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_x="315dp"
+            android:layout_y="272dp"
+            app:srcCompat="@drawable/edit"/>
+
+        <ImageView
+            android:id="@+id/imgModificaClasse"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/edit"
+            android:layout_x="315dp"
+            android:layout_y="272dp" />
+
+    </LinearLayout>
+    <!-- app:srcCompat="@drawable/edit"-->
+</AbsoluteLayout>

@@ -1,5 +1,6 @@
 package com.consumer.gestioneorari.ttapschool;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +10,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -20,11 +18,12 @@ public class ProfRegisterActivity extends AppCompatActivity {
     private TextView etNome,etCognome,etPassword,etRipetiPassword,etUsername;
     private Button btnAggiungiMateria,btnAggiungiClasse,btnRegistra;
     private Spinner spMateria,spSezione,spIndirizzo,spClasse;
-    private LinearLayout lyMaterie;
+    private LinearLayout lyMaterie,llClasse,llContainerSpinners;
+
 
     ArrayList<String> arrayListMaterie;
     ArrayList<String> arrayListMaterieScelte;
-    ArrayList<Spinner> arrayListSpinner;
+    ArrayList<Spinner> arrayListSpinnerMaterie;
 
     ArrayList<String> arrayListClassi;
     ArrayList<String> arrayListClassiScelte;
@@ -32,11 +31,16 @@ public class ProfRegisterActivity extends AppCompatActivity {
     ArrayList<String> arrayListSezioniScelte;
     ArrayList<String> arrayListIndirizzi;
     ArrayList<String> arrayListIndirizziScelti;
+    ArrayList<ClasseSpinner> arrayListCLasseSpinner;
 
 
 
-    Spinner spinner;
+
+
     ArrayAdapter<String> spinnerArrayAdapter;
+
+
+    ClasseSpinner classeSpinner;
 
 
     @Override
@@ -47,7 +51,7 @@ public class ProfRegisterActivity extends AppCompatActivity {
         etNome=(TextView)findViewById(R.id.etNome);
         etCognome=(TextView)findViewById(R.id.etCognome);
         etUsername=(TextView)findViewById(R.id.etUsername);
-        etPassword=(TextView)findViewById(R.id.etPassword);
+        etPassword=(TextView)findViewById(R.id.etRipetiPassword);
         etRipetiPassword=(TextView)findViewById(R.id.etRipetiPassword);
         btnAggiungiMateria=(Button)findViewById(R.id.btnAggiungiMateria);
         btnAggiungiClasse=(Button)findViewById(R.id.btnAggiungiClasse);
@@ -57,14 +61,19 @@ public class ProfRegisterActivity extends AppCompatActivity {
         spSezione=(Spinner)findViewById(R.id.spSezione);
         spIndirizzo=(Spinner)findViewById(R.id.spIndirizzo);
         lyMaterie=(LinearLayout) findViewById(R.id.lyMaterie);
+        llClasse=(LinearLayout) findViewById(R.id.llClasse);
+
+
+        classeSpinner = new ClasseSpinner();
 
         arrayListMaterieScelte = new ArrayList<String>();
+        arrayListCLasseSpinner = new ArrayList<ClasseSpinner>();
 
         arrayListClassiScelte = new ArrayList<String>();
         arrayListSezioniScelte = new ArrayList<String>();
         arrayListIndirizziScelti = new ArrayList<String>();
 
-        arrayListSpinner = new ArrayList<Spinner>();
+        arrayListSpinnerMaterie = new ArrayList<Spinner>();
 
         arrayListMaterie = new ArrayList<String>();
         arrayListMaterie.add("storia");
@@ -91,117 +100,68 @@ public class ProfRegisterActivity extends AppCompatActivity {
         arrayListIndirizzi.add("informatica");
         arrayListIndirizzi.add("chimico");
 
-                 ArrayAdapter<String> adp1 = new ArrayAdapter<String>(getApplicationContext(),
-                        android.R.layout.simple_list_item_1, arrayListMaterie);
-                adp1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spMateria.setAdapter(adp1);
-
-                 spMateria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> arg0) {
-                    }
-         });
+        //inizializzo gli spinner iniziali
+        inizializeSpinner(spMateria,arrayListMaterie);
+        inizializeSpinner(spClasse,arrayListClassi);
+        inizializeSpinner(spSezione,arrayListSezioni);
+        inizializeSpinner(spIndirizzo,arrayListIndirizzi);
 
 
-        ArrayAdapter<String> adp2 = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, arrayListClassi);
-        adp2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spClasse.setAdapter(adp2);
-
-        spClasse.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-            }
-        });
-
-        ArrayAdapter<String> adp3 = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, arrayListSezioni);
-        adp3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spSezione.setAdapter(adp3);
-
-        spSezione.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-            }
-        });
-
-        ArrayAdapter<String> adp4 = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, arrayListIndirizzi);
-        adp4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spIndirizzo.setAdapter(adp4);
-
-        spIndirizzo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-            }
-        });
+        classeSpinner = new ClasseSpinner(spClasse,spSezione,spIndirizzo);
+        arrayListCLasseSpinner.add(classeSpinner);
 
 
-
-
-
-        arrayListSpinner.add(spMateria);
+        arrayListSpinnerMaterie.add(spMateria);
 
         btnAggiungiMateria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                spinner = new Spinner(getApplicationContext());
-                spinnerArrayAdapter = new ArrayAdapter<String>(
-                        getApplicationContext(),android.R.layout.simple_list_item_1,arrayListMaterie);
-                spinner.setAdapter(spinnerArrayAdapter);
 
-
-                spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-                {
-
-                    @Override
-                    public void onItemSelected(AdapterView<?> arg0, View arg1,int position, long id) {
-                     }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> arg0) {
-                        // TODO Auto-generated method stub
-
-                    }
-                });
-
-
-
-                arrayListSpinner.add(spinner);
+                Spinner spinner = new Spinner(getApplicationContext());
+                spinner=createSpinner(spinner,arrayListMaterie);
+                arrayListSpinnerMaterie.add(spinner);
                 lyMaterie.addView(spinner);
             }
         });
 
+
+        btnAggiungiClasse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llContainerSpinners = new LinearLayout(getApplicationContext());
+                llContainerSpinners.setLayoutParams(new ActionBar.LayoutParams(android.app.ActionBar.LayoutParams.WRAP_CONTENT, android.app.ActionBar.LayoutParams.WRAP_CONTENT));
+                Spinner spinner;
+                classeSpinner = new ClasseSpinner(createSpinner((spinner= new Spinner(getApplicationContext())),arrayListClassi),createSpinner((spinner= new Spinner(getApplicationContext())),arrayListSezioni),createSpinner((spinner= new Spinner(getApplicationContext())),arrayListIndirizzi));
+                arrayListCLasseSpinner.add(classeSpinner);
+                llContainerSpinners.addView(classeSpinner.getClasse());
+                llContainerSpinners.addView(classeSpinner.getSezione());
+                llContainerSpinners.addView(classeSpinner.getIndirizzo());
+                llClasse.addView(llContainerSpinners);
+
+            }
+        });
+
+
+
         btnRegistra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(arrayListSpinner.size()>0)
-                for(int i = 0;i<arrayListSpinner.size();i++)
-                    arrayListMaterieScelte.add(arrayListSpinner.get(i).getSelectedItem().toString());
-
-               /* arrayListIndirizziScelti.add(spIndirizzo.getSelectedItem().toString());
-                arrayListClassiScelte.add(spClasse.getSelectedItem().toString());
-                arrayListSezioniScelte.add(spSezione.getSelectedItem().toString());*/
-
-                Classe c = new Classe(spClasse.getSelectedItem().toString(),spSezione.getSelectedItem().toString(),spIndirizzo.getSelectedItem().toString());
                 ArrayList<Classe> arrayListClassi = new ArrayList<Classe>();
-                arrayListClassi.add(c);
+
+                if(arrayListSpinnerMaterie.size()>0)
+                    for(int i = 0;i<arrayListSpinnerMaterie.size();i++)
+                        arrayListMaterieScelte.add(arrayListSpinnerMaterie.get(i).getSelectedItem().toString());
+
+
+
+                for(int i=0;i<arrayListCLasseSpinner.size();i++) {
+                    String A=arrayListCLasseSpinner.get(i).getClasse().getSelectedItem().toString();
+                    String B=arrayListCLasseSpinner.get(i).getSezione().getSelectedItem().toString();
+                    String C=arrayListCLasseSpinner.get(i).getIndirizzo().getSelectedItem().toString();
+
+                    Classe c = new Classe(A,B,C);
+                    arrayListClassi.add(c);
+                }
 
                 WS ws = new WS(getApplicationContext());
                 ws.setClasse(arrayListClassi);
@@ -217,6 +177,49 @@ public class ProfRegisterActivity extends AppCompatActivity {
     }
 
 
+
+    public void inizializeSpinner(Spinner s, ArrayList<String> arrayList) {
+
+        ArrayAdapter<String> adp = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_list_item_1, arrayList);
+        adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s.setAdapter(adp);
+
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
+    }
+
+    public Spinner createSpinner(Spinner s,ArrayList<String> arrayList) {
+
+        s = new Spinner(getApplicationContext());
+        spinnerArrayAdapter = new ArrayAdapter<String>(
+                getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
+        s.setAdapter(spinnerArrayAdapter);
+
+
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+        return s;
+
+    }
 
 
 

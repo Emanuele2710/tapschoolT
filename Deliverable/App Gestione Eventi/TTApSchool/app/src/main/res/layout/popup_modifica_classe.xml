@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_x="0dp"
+        android:layout_y="226dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true">
+
+        <AbsoluteLayout
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
+
+            android:background="@drawable/popup"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="26dp"
+                android:layout_y="66dp"
+                android:textColor="@android:color/white"
+                android:text="classe" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_x="0dp"
+                android:layout_y="94dp">
+
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/linearLayout"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_x="2dp"
+                    android:spinnerMode="dialog"
+                    android:layout_y="28dp" />
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/linearLayout"
+                    android:layout_marginRight="10dp"
+                    android:spinnerMode="dialog"
+                    android:layout_x="2dp"
+                    android:layout_y="28dp" />
+
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/linearLayout"
+                    android:layout_x="2dp"
+                    android:spinnerMode="dialog"
+                    android:layout_y="28dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="108dp"
+                android:layout_y="66dp"
+                android:textColor="@android:color/white"
+                android:text="sezione" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="203dp"
+                android:layout_y="66dp"
+                android:textColor="@android:color/white"
+                android:text="indirizzo" />
+
+            <Button
+                android:id="@+id/btnChiudi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_x="10dp"
+                android:layout_y="162dp"
+                android:textColor="@android:color/white"
+                android:text="ANNULLA" />
+
+            <Button
+                android:id="@+id/btnElimina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="116dp"
+                android:layout_y="162dp"
+                android:background="@android:color/transparent"
+                android:text="ELIMINA"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnConferma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="220dp"
+                android:layout_y="162dp"
+                android:background="@android:color/transparent"
+                android:text="CONFERMA"
+                android:textColor="@android:color/white" />
+
+            <Spinner
+                android:id="@+id/spListaClassiPopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+               android:spinnerMode="dropdown"
+                android:layout_above="@+id/linearLayout"
+                android:layout_x="44dp"
+                android:layout_y="19dp" />
+
+
+        </AbsoluteLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

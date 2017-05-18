@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.consumer.gestioneorari.ttapschool.AddEventoActivity"
+    android:background="@drawable/sfondo_activity"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="555dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnInserisciEvento"
+            android:layout_width="222dp"
+            android:layout_height="48dp"
+            android:layout_x="96dp"
+            android:layout_y="563dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="INSERISCI"
+            android:textColor="@android:color/background_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="2dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="248dp"
+            android:layout_height="170dp"
+            app:srcCompat="@drawable/logo_white"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="185dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_x="98dp"
+            android:layout_y="194dp"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:ems="10"
+            android:hint="Data"
+            android:textColorHint="@android:color/white"
+            android:textIsSelectable="true"
+            android:cursorVisible="false"
+            android:inputType="none" />
+
+        <EditText
+            android:id="@+id/etOra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="101dp"
+            android:textColor="@android:color/white"
+            android:layout_y="246dp"
+            android:textAlignment="center"
+            android:textColorHint="@android:color/white"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:hint="Ora"
+            android:inputType="none"
+            android:textIsSelectable="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="313dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_x="156dp"
+            android:layout_y="432dp"
+            android:text="INSERISCI NOTA"
+            android:textColor="@android:color/white" />
+
+
+        <EditText
+            android:id="@+id/etNota"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="101dp"
+            android:layout_y="386dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:maxLines="7" />
+    </LinearLayout>
+
+</AbsoluteLayout>

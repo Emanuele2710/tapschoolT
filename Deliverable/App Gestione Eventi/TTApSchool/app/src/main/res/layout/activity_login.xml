@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etRipetiPassword"
         style="@android:style/Widget.DeviceDefault.Light.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,8 +41,6 @@
         style="@android:style/Widget.EditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/btnLogin"
-        android:layout_centerVertical="true"
         android:backgroundTint="@android:color/background_light"
         android:ems="10"
         android:hint="Username"
@@ -53,22 +51,24 @@
         android:textColorLink="@android:color/background_light"
         tools:layout_editor_absoluteX="85dp"
         tools:layout_editor_absoluteY="222dp"
-        tools:textColorHint="@android:color/background_light" />
+        tools:textColorHint="@android:color/background_light"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/btnLogin" />
 
     <TextView
         android:id="@+id/tvRegistrati"
         android:layout_width="75dp"
-        android:layout_height="17dp"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvNome"
+        android:layout_alignBottom="@+id/tvNome"
+        android:layout_toEndOf="@+id/tvNome"
         android:text="Registrati!"
         android:textColor="@android:color/background_light"
         tools:layout_editor_absoluteX="235dp"
         tools:layout_editor_absoluteY="373dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Non sei ancora registrato? "
@@ -89,7 +89,7 @@
         tools:layout_editor_absoluteY="319dp"
         tools:layout_editor_absoluteX="86dp"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/etPassword"
+        android:layout_below="@+id/etRipetiPassword"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

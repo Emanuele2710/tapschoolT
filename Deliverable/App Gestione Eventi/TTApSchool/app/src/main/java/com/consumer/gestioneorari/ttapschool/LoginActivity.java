@@ -21,8 +21,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+
         etUsername=(EditText)findViewById(R.id.etUsername);
-        etPassword=(EditText)findViewById(R.id.etPassword);
+        etPassword=(EditText)findViewById(R.id.etRipetiPassword);
         btnLogin = (Button)findViewById(R.id.btnLogin);
         tvRegistrati = (TextView)findViewById(R.id.tvRegistrati);
 
@@ -32,7 +34,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 WS ws = new WS(getApplicationContext());
-                ws.execute(ws.metodoLogin,etUsername.getText().toString(),etPassword.getText().toString());
+                try {
+                    ws.execute(ws.metodoLogin, etUsername.getText().toString(), etPassword.getText().toString());
+                }catch(Exception e){
+
+                }
             }
         });
 

@@ -118,7 +118,7 @@
             android:textColorHighlight="@android:color/background_light"
             android:textColorHint="@android:color/background_light"
             android:textColorLink="@android:color/background_light"
-            app:layout_constraintBottom_toTopOf="@+id/etPassword"
+            app:layout_constraintBottom_toTopOf="@+id/etRipetiPassword"
             app:layout_constraintLeft_toLeftOf="@+id/etCognome"
             app:layout_constraintRight_toRightOf="@+id/etCognome"
             tools:layout_constraintBottom_creator="1"
@@ -127,7 +127,7 @@
             tools:textColorHint="@android:color/background_light" />
 
         <EditText
-            android:id="@+id/etPassword"
+            android:id="@+id/etRipetiPassword"
             style="@android:style/Widget.EditText"
             android:layout_width="wrap_content"
             android:layout_height="41dp"
@@ -227,25 +227,32 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            >
+            android:orientation="vertical"
+            android:id="@+id/llClasse"
+            android:layout_marginBottom="15dp">
 
-
-            <Spinner
-                android:id="@+id/spClasse"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content">
 
-            <Spinner
-                android:id="@+id/spSezione"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <Spinner
+                    android:id="@+id/spClasse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
 
-            <Spinner
-                android:id="@+id/spIndirizzo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <Spinner
+                    android:id="@+id/spSezione"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:id="@+id/spIndirizzo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
         </LinearLayout>
 
         <Button

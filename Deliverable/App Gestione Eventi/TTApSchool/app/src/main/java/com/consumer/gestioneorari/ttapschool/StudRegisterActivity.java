@@ -31,7 +31,7 @@ public class StudRegisterActivity extends AppCompatActivity {
         etNome=(TextView)findViewById(R.id.etNome);
         etCognome=(TextView)findViewById(R.id.etCognome);
         etUsername=(TextView)findViewById(R.id.etUsername);
-        etPassword=(TextView)findViewById(R.id.etPassword);
+        etPassword=(TextView)findViewById(R.id.etRipetiPassword);
         btnRegistra=(Button)findViewById(R.id.btnRegistra);
         spClasse=(Spinner)findViewById(R.id.spClasse);
         spSezione=(Spinner)findViewById(R.id.spSezione);
@@ -56,52 +56,9 @@ public class StudRegisterActivity extends AppCompatActivity {
         arrayListIndirizzi.add("chimico");
 
 
-        ArrayAdapter<String> adp1 = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, arrayListIndirizzi);
-        adp1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spIndirizzo.setAdapter(adp1);
-
-        spIndirizzo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-            }
-        });
-
-
-        ArrayAdapter<String> adp2 = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, arrayListClassi);
-        adp2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spClasse.setAdapter(adp2);
-
-        spClasse.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-            }
-        });
-
-        ArrayAdapter<String> adp3 = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, arrayListSezioni);
-        adp3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spSezione.setAdapter(adp3);
-
-        spSezione.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-            }
-        });
-
+        inizializeSpinner(spIndirizzo,arrayListIndirizzi);
+        inizializeSpinner(spClasse,arrayListClassi);
+        inizializeSpinner(spSezione,arrayListSezioni);
 
 
         btnRegistra.setOnClickListener(new View.OnClickListener() {
@@ -113,11 +70,24 @@ public class StudRegisterActivity extends AppCompatActivity {
         });
 
 
+    }
 
 
+    public void inizializeSpinner(Spinner s, ArrayList<String> arrayList) {
 
+        ArrayAdapter<String> adp = new ArrayAdapter<String>(getApplicationContext(),
+                android.R.layout.simple_list_item_1, arrayList);
+        adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s.setAdapter(adp);
 
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+            }
 
-
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
     }
 }
